@@ -31,6 +31,7 @@
 		202B8E342216CDF100CEEC36 /* sphere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sphere.h; sourceTree = "<group>"; };
 		202B8E352216CEA200CEEC36 /* hitable_list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hitable_list.h; sourceTree = "<group>"; };
 		202B8E362216D4FF00CEEC36 /* camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
+		202B8E372216DDC100CEEC36 /* material.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = material.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +71,7 @@
 				202B8E352216CEA200CEEC36 /* hitable_list.h */,
 				202B8E3222168D2300CEEC36 /* ray.h */,
 				202B8E362216D4FF00CEEC36 /* camera.h */,
+				202B8E372216DDC100CEEC36 /* material.h */,
 			);
 			path = MyRaytracing;
 			sourceTree = "<group>";
