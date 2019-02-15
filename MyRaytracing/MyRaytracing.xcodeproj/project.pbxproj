@@ -27,6 +27,9 @@
 		202B8E2A221684A000CEEC36 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		202B8E312216869D00CEEC36 /* vec3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vec3.h; sourceTree = "<group>"; };
 		202B8E3222168D2300CEEC36 /* ray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ray.h; sourceTree = "<group>"; };
+		202B8E332216CD9800CEEC36 /* hitable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hitable.h; sourceTree = "<group>"; };
+		202B8E342216CDF100CEEC36 /* sphere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sphere.h; sourceTree = "<group>"; };
+		202B8E352216CEA200CEEC36 /* hitable_list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hitable_list.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,9 @@
 			children = (
 				202B8E2A221684A000CEEC36 /* main.cpp */,
 				202B8E312216869D00CEEC36 /* vec3.h */,
+				202B8E332216CD9800CEEC36 /* hitable.h */,
+				202B8E342216CDF100CEEC36 /* sphere.h */,
+				202B8E352216CEA200CEEC36 /* hitable_list.h */,
 				202B8E3222168D2300CEEC36 /* ray.h */,
 			);
 			path = MyRaytracing;
