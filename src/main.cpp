@@ -13,10 +13,11 @@
 #include "float.h"
 #include "camera.h"
 #include "material.h"
+#include <limits>
 
 vec3 color(const ray& r, hitable *world, int depth) {
     hit_record rec;
-    if (world->hit(r, 0.001, MAXFLOAT, rec)) {
+    if (world->hit(r, 0.001, std::numeric_limits<float>::max(), rec)) {
         ray scattered;
         vec3 attenuation;
         if (depth < 50 && rec.mat_ptr->scatter(r, rec, attenuation, scattered)) {

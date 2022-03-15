@@ -11,6 +11,14 @@
 
 #include "ray.h"
 
+#define _USE_MATH_DEFINES
+#include <math.h>
+
+#ifdef WIN32
+#define drand48() (rand() / (RAND_MAX + 1.0))
+#endif // WIN32
+
+
 vec3 random_in_unit_disk() {
     vec3 p;
     
