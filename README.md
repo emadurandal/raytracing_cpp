@@ -1,4 +1,4 @@
-# Build
+# Native Build
 
 ```bash
 $ mkdir build
@@ -14,3 +14,12 @@ $ cd embuild
 $ emcmake cmake ..
 $ make
 ```
+
+# Emscripten Build
+
+```
+$ mkdir embuild
+$ cd embuild
+$ emcmake cmake ..
+$ make
+``` 

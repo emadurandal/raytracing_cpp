@@ -34,29 +34,43 @@ endif()
 
 file(GLOB BASESRCS "${SRC_DIR}/*.cc" "${SRC_DIR}/*.cpp" "${SRC_DIR}/*.c" "${SRC_DIR}/*.mm" "${INC_DIR}/*.h" "${INC_DIR}/*.hpp")
 
+
 add_executable(
         myapp  ${BASESRCS}
 )
 
-# 単体テスト
-find_package(GTest REQUIRED)
-enable_testing()
+target_include_directories(myapp PRIVATE ${INC_DIR})
 
-add_executable(MyLibraryTest "${TEST_DIR}/main.test.cpp" )
+##################################
+###         EMSCRIPTEN         ###
+##################################
 
-target_link_libraries(MyLibraryTest GTest::gtest GTest::gtest_main)
+if (EMSCRIPTEN)
+    set(CMAKE_EXECUTABLE_SUFFIX ".html") # デフォルトでは.js
+endif()
 
-add_test(NAME MyLibraryTest COMMAND MyLibraryTest)
+##################################
+###         Google Test        ###
+##################################
+if (NOT EMSCRIPTEN)
+        find_package(GTest REQUIRED)
+        enable_testing()
 
-# link_directories(
-#         ${GTEST_LIBRARIES_DIR} /usr/local/lib
-# )
+        add_executable(MyLibraryTest "${TEST_DIR}/main.test.cpp" )
+
+        target_link_libraries(MyLibraryTest GTest::gtest GTest::gtest_main)
+
+        add_test(NAME MyLibraryTest COMMAND MyLibraryTest)
+
         link_directories(/usr/local/lib)
+        # link_directories(
+        #         ${GTEST_LIBRARIES_DIR} /usr/local/lib
+        # )
 
-# CTestに単体テストを登録
-include(GoogleTest)
-gtest_discover_tests(MyLibraryTest)
+        include(GoogleTest)
+        gtest_discover_tests(MyLibraryTest)
 
-include_directories(
-        ${INC_DIR} ${GTEST_INCLUDE_DIRS}
-)
+        include_directories(
+                ${INC_DIR} ${GTEST_INCLUDE_DIRS}
+        )
+endif()
