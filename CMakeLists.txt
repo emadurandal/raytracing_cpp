@@ -26,7 +26,8 @@ if (APPLE)
         # resourcesフォルダのファイルとフォルダを列挙し
         # 結果をRESOURCE_FILESに格納する
         file(GLOB RESOURCE_FILES	"../resources/*")
-
+	SET(CMAKE_CXX_STANDARD 11)
+	SET(CMAKE_CXX_STANDARD_REQUIRED on)
 endif()
 # /APPLE
 
@@ -50,6 +51,7 @@ add_test(NAME MyLibraryTest COMMAND MyLibraryTest)
 # link_directories(
 #         ${GTEST_LIBRARIES_DIR} /usr/local/lib
 # )
+        link_directories(/usr/local/lib)
 
 # CTestに単体テストを登録
 include(GoogleTest)
