@@ -10,13 +10,15 @@
 #define hitable_h
 
 #include "ray.h"
+#include <Eigen/Dense>
+using namespace Eigen;
 
 class material;
 
 struct hit_record {
     float t;
-    vec3 p;
-    vec3 normal;
+    Vector3f p;
+    Vector3f normal;
     material *mat_ptr;
 };
 
