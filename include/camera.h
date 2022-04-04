@@ -26,7 +26,7 @@ Vector3f random_in_unit_disk() {
     
     do {
         p = 2.0 * Vector3f(drand48(), drand48(), 0) - Vector3f(1, 1, 0);
-    } while (dot(p, p) >= 1.0);
+    } while (p.dot(p) >= 1.0);
     
     return p;
 }
@@ -40,9 +40,9 @@ public:
         float half_height = tan(theta / 2);
         float half_width = aspect * half_height;
         origin = lookfrom;
-        w = unit_vector(lookfrom - lookat);
-        u = unit_vector(cross(vup, w));
-        v = cross(w, u);
+        w = (lookfrom - lookat).normalized();
+        u = vup.cross(w).normalized();
+        v = w.cross(u);
         lower_left_corner = origin - half_width * focus_dist * u - half_height * focus_dist * v - focus_dist * w;
         horizontal = 2 * half_width * focus_dist * u;
         vertical = 2 * half_height * focus_dist * v;

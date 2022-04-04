@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(SRC_DIR ${PROJECT_SOURCE_DIR}/src)
 set(INC_DIR ${PROJECT_SOURCE_DIR}/include)
 set(TEST_DIR ${PROJECT_SOURCE_DIR}/test)
+set(EIGEN_INC_DIR /opt/homebrew/include/eigen3)
 
 
 
@@ -39,7 +40,7 @@ add_executable(
         myapp  ${BASESRCS}
 )
 
-target_include_directories(myapp PRIVATE ${INC_DIR})
+target_include_directories(myapp PRIVATE ${INC_DIR} ${EIGEN_INC_DIR})
 
 ##################################
 ###         EMSCRIPTEN         ###
